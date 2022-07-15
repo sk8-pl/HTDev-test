@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import TaskCard from "./task-card";
 import Pagination from "@mui/material/Pagination";
-import usePagination from "../../helpers/usePagintaion";
+import usePagination from "../../hooks/usePagintaion";
 import { TaskObjectType } from "../../interfaces/date.inteface";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
