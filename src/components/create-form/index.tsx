@@ -14,11 +14,7 @@ import { changeLocation, changeText, changeSign } from '../../store/form-state/f
 
 const FormTask = () => {
   const dispatch = useDispatch();
-  const storeForm = useSelector((state: RootState) => state.dataForm);
-  const location = storeForm.location as unknown as string;
-  const currentText = storeForm.text as unknown as string;
-  const currentSign = storeForm.sign as unknown as string;
-
+  const { location, text, sign} = useSelector((state: RootState) => state.dataForm)
   const [currentLocation, setCurrentLocation] = useState(location ? location : '');
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -75,7 +71,7 @@ const FormTask = () => {
         InputLabelProps={{
           shrink: true,
         }}
-        value={currentText}
+        value={text}
         onChange={e => handleChangeText(e.target.value)}
       />
       <div
@@ -98,7 +94,7 @@ const FormTask = () => {
           InputLabelProps={{
             shrink: true,
           }}
-          value={currentSign}
+          value={sign}
           onChange={e => handleChangeSign(e.target.value)}
         />
         <Box sx={{ width: "250px" }}>
