@@ -15,7 +15,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-function BtnSubmit() {
+const BtnSubmit = () => {
   const storeForm = useSelector((state: RootState) => state.dataForm);
   const location = storeForm.location as unknown as string;
   const currentText = storeForm.text as unknown as string;
@@ -43,7 +43,7 @@ function BtnSubmit() {
       : setDisbled(true);
   }, [location, currentText, currentSign]);
 
-  async function getTimeObject() {
+  const getTimeObject = async () => {
     fetch(`https://worldtimeapi.org/api/timezone/${location}`)
       .then((res) => res.json())
       .then(

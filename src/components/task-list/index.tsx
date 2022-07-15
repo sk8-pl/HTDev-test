@@ -11,7 +11,7 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import FormHelperText from "@mui/material/FormHelperText";
 
-export default function TaskList() {
+const TaskList = () => {
   const storeList = useSelector((state: RootState) => state.dataList.list);
   const [page, setPage] = useState(1);
   const [visibleCards, setVisibleCards] = useState("4");
@@ -83,3 +83,5 @@ export default function TaskList() {
     </React.Fragment>
   );
 }
+
+export default TaskList;

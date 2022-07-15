@@ -12,7 +12,7 @@ import { RootState } from '../../store';
 import { changeLocation, changeText, changeSign } from '../../store/form-state/form-state';
 
 
-function FormTask() {
+const FormTask = () => {
   const dispatch = useDispatch();
   const storeForm = useSelector((state: RootState) => state.dataForm);
   const location = storeForm.location as unknown as string;

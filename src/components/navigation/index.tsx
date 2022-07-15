@@ -8,7 +8,7 @@ import {
   useLocation,
 } from 'react-router-dom';
 
-function useRouteMatch(patterns: readonly string[]) {
+const useRouteMatch = (patterns: readonly string[]) => {
   const { pathname } = useLocation();
 
   for (let i = 0; i < patterns.length; i += 1) {
@@ -22,7 +22,7 @@ function useRouteMatch(patterns: readonly string[]) {
   return null;
 }
 
-function MyTabs() {
+const MyTabs = () => {
   const routeMatch = useRouteMatch(['/create-task', '/']);
   const currentTab = routeMatch?.pattern?.path;
 
@@ -34,10 +34,12 @@ function MyTabs() {
   );
 }
 
-export default function TabsRouter() {
+const TabsRouter = () => {
   return (
       <Box sx={{ width: '100%' }}>
         <MyTabs />
       </Box>
   );
 }
+
+export default TabsRouter;

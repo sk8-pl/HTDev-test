@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router";
 import TaskList from "../components/task-list";
 import FormTask from "../components/create-form";
 
-function RoterLink() {
+const RoterLink = () => {
   return (
     <Routes>
       <Route path="/" element={<TaskList />} />

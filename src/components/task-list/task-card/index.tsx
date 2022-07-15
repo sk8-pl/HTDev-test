@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
 import TaskObject from "../../../interfaces/date.inteface";
 
-function TaskCard(props: TaskObject) {
+const TaskCard = (props: TaskObject) => {
   const { text, sign, date, index } = props;
 
   return (
