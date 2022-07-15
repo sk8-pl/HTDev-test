@@ -1,17 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { TaskObjectType } from "../../interfaces/date.inteface";
+import { getDataFromLS, setDataFromLS } from "../../localStorage/iteractionLocalStorage";
 
-// [] as Array<TaskObjectType>
+const DATA_LIST_KEY = "dataList";
 
 export const taskList = createSlice({
-  name: "dataList",
+  name: DATA_LIST_KEY,
   initialState: {
-    list: JSON.parse(localStorage.getItem("dataList") || '[]') as Array<TaskObjectType>
+    list: getDataFromLS(DATA_LIST_KEY)
   },
   reducers: {
     addCardToList: (state, action) => {
       state.list.push(action.payload);
-      localStorage.setItem("dataList", JSON.stringify(state.list));
+      setDataFromLS(DATA_LIST_KEY, state.list);
     },
   },
 });
