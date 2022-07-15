@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const formValues = createSlice({
+export const formState = createSlice({
   name: 'dataForm',
   initialState: {
     location: localStorage.getItem("location") || '',
@@ -26,6 +26,6 @@ export const formValues = createSlice({
   },
 });
 
-export const { changeLocation, changeText, changeSign, changeDataTime } = formValues.actions;
+export const { changeLocation, changeText, changeSign, changeDataTime } = formState.actions;
 
-export default formValues.reducer;
+export default formState.reducer;
